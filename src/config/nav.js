@@ -3,7 +3,6 @@ export const nav = [
 		title: 'Home',
 		slug: '/',
 	},
-
 	{
 		title: 'Reserveren',
 		slug: '/reserveren',
@@ -11,9 +10,6 @@ export const nav = [
 	{
 		title: 'Over Ons',
 		slug: '/overons',
-	},
-	{
-		title: 'Contact',
-		slug: '/contact',
-	},
+	}
+
 ];

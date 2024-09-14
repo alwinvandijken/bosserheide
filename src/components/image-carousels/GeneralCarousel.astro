@@ -7,28 +7,28 @@ const images: ComponentProps<typeof Carousel>["images"] = [
 	{
 
 		src: "/assets/images/album/2.Slaapkamer3-1240x827.jpg",
-		alt: "",
+		alt: "Master bedroom",
 		width: 1350,
 		height: 1080,
 		widths: [200, 675, 1350],
 	},
 	{
 		src: "/assets/images/album/3.Slaapkamer5-1240x827.jpg",
-		alt: "",
+		alt: "Second bedroom",
 		width: 1350,
 		height: 1080,
 		widths: [200, 675, 1350],
 	},
 	{
 		src: "/assets/images/album/IMG_9564-scaled-e1653814889512-1240x930.jpeg",
-		alt: "",
+		alt: "Voorzijde B&B",
 		width: 1350,
 		height: 1080,
 		widths: [200, 675, 1350],
 	},
 	{
 		src: "/assets/images/album/IMG_9566-scaled-e1653814475232-1240x930.jpeg",
-		alt: "",
+		alt: "Voorzijde B&B",
 		width: 1280,
 		height: 1920,
 		widths: [200, 675, 1350],
@@ -45,6 +45,7 @@ const images: ComponentProps<typeof Carousel>["images"] = [
 			return (
 				<li class="entry__elem">
 					<a
+						title="Open image"
 						href={`./?image=${i}`}
 						data-carousel-index={i}
 						class="entry__link"

@@ -21,6 +21,7 @@ const { footerSocials, footerLists, copyrightName, background, color } =
             footerSocials.map((social) => (
               <li class="footer-socials__item">
                 <a
+                  aria-label={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
