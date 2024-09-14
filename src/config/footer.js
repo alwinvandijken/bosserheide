@@ -23,11 +23,8 @@ export const footerLists = [
 			{
 				title: 'Over ons',
 				slug: '/overons',
-			},
-			{
-				title: 'Contact',
-				slug: '/contact',
-			},
+			}
+
 		],
 	}
 
