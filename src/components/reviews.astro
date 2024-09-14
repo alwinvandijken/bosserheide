@@ -1,0 +1,67 @@
+---
+
+import { date } from 'astro/zod';
+import Container  from '../components/core/Container.astro';
+
+const reviews = [
+	{
+		name: 'John Doe',
+		country: 'United States',
+		date: '2021-09-01',
+		rating: 4.5,
+		review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt ultricies. Nullam nec purus nec nunc tincidunt ultricies.',
+
+	},
+];
+
+---
+
+<Container>
+	<h1>Reviews</h1>
+
+	<div class="amenities-grid__container">
+		<ul class="review__list">
+			{reviews.map((item) => (
+				<li><div class="icon-md rounded text-bg-warning fs-6">{item.rating}</div></li>
+			))}
+
+			<li>
+
+
+
+			</li>
+		</ul>
+
+	</div>
+
+
+</Container>
+
+<style>
+    .amenities-grid__container {
+        padding: 10vh 0 1rem 0;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+	.review__list {
+		list-style: none;
+    }
+    .icon-md {
+        width: 2.6rem;
+        height: 2.6rem;
+        line-height: 2.6rem;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .rounded {
+        border-radius: var(--theme-button-border-radius) !important;
+    }
+    .fs-6 {
+        font-size: 1rem !important;
+    }
+    .text-bg-warning {
+        background-color: var(--theme-primary);
+        color: var(--theme-on-primary);
+
+    }
+</style>

@@ -3,6 +3,8 @@ import { Icon } from 'astro-icon/components';
 import { Container, Button } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
+import { Image } from 'astro:assets';
+import logoBosserheideImage from '/assets/logo/WebP/B&B_logo_Transparent@2x.webp';
 ---
 
 <Container>
@@ -36,11 +38,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 		</div>
 		<div class="hero-section__image">
 				<picture>
-					<img
-						src="https://bosserheide.nl/wp-content/uploads/2022/05/IMG_9566-scaled-e1653814475232.jpeg"
-						alt="Vooraanzicht B&B Bosserheide"
-						id="home-hero-image"
-					/>
+					<Image class="bosserheide-logo" src={logoBosserheideImage} alt="Logo B&B Bosserheide" />
+
 				</picture>
 		</div>
 	</section>

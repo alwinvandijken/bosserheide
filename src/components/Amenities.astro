@@ -1,0 +1,45 @@
+---
+
+import Container  from '../components/core/Container.astro';
+import {amenitiesLists } from '../config/amenities';
+import { Icon } from 'astro-icon/components';
+---
+
+<Container>
+	<h1>Voorzieningen</h1>
+
+	<button aria-label="review score" class="group flex items-center cursor-default flex-row w-full cursor-pointer"><div class="-icon w-full"><div class="transition w-full bg-tinted text-primary rounded-full rounded-bl-0 hover:bg-tinted-dark"><svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" font-size="42" dy="7" fill="currentColor" dominant-baseline="middle" text-anchor="middle">10</text></svg></div></div></button>
+
+	<div class="amenities-grid__container">
+	{
+		amenitiesLists.map((list) => (
+			<div>
+				<p>
+					<Icon name={list.icon} width={24} height={24} />
+					<strong>{list.title}</strong>
+				</p>
+
+				<ul class="footer-link__list">
+					{list.items.map((item) => (
+						<li>
+							<a href={item.slug}>{item.title}</a>
+
+						</li>
+					))}
+				</ul>
+			</div>
+		))
+	}
+
+	</div>
+
+
+</Container>
+
+<style>
+    .amenities-grid__container {
+        padding: 10vh 0 1rem 0;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+</style>
