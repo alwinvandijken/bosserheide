@@ -10,10 +10,10 @@ export const nav = [
 	},
 	{
 		title: 'Over Ons',
-		slug: '/bedrijf/overons',
+		slug: '/overons',
 	},
 	{
 		title: 'Contact',
-		slug: '/bedrijf/contact',
+		slug: '/contact',
 	},
 ];
