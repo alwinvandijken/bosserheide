@@ -1,19 +1,15 @@
----
-import { Image } from 'astro:assets';
-import logoBosserheideImage from '/assets/logo/B&B_logo_GROEN.webp';
----
-<Image class="bosserheide-logo" src={logoBosserheideImage} alt="Logo B&B Bosserheide" />
+<p class="odyssey-logo">B&B Bosserheide</p>
 
 <style>
-	.bosserheide-logo {
-		width: fit-content;
-		margin: 0;
-		font-family: var(--theme-font-family-serif);
-    font-size: var(--font-size-md);
-		color: inherit;
-	}
-	.bosserheide-logo:hover {
-		text-decoration: underline;
-		cursor: pointer;
-	}
+    .odyssey-logo {
+        width: fit-content;
+        margin: 0;
+        font-family: var(--theme-font-family-serif);
+        font-size: var(--font-size-md);
+        color: inherit;
+    }
+    .odyssey-logo:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 </style>
