@@ -3,16 +3,17 @@ export const nav = [
 		title: 'Home',
 		slug: '/',
 	},
+
 	{
-		title: 'Blog',
-		slug: '/blog',
+		title: 'Reserveren',
+		slug: '/reserveren',
 	},
 	{
-		title: 'About',
-		slug: '/company/about',
+		title: 'Over Ons',
+		slug: '/bedrijf/overons',
 	},
 	{
 		title: 'Contact',
-		slug: '/company/contact',
+		slug: '/bedrijf/contact',
 	},
 ];
