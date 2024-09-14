@@ -1,0 +1,89 @@
+---
+// import { Carousel, Photo } from "~";
+import { Carousel, Photo } from 'astro-carousel';
+import type { ComponentProps } from "astro/types";
+
+const images: ComponentProps<typeof Carousel>["images"] = [
+	{
+		src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
+		alt: "",
+		width: 1350,
+		height: 1080,
+		widths: [200, 675, 1350],
+	},
+	{
+		src: "https://a.storyblok.com/f/95455/1350x1080/231d2407ea/p4030184.jpg",
+		alt: "",
+		width: 1350,
+		height: 1080,
+		widths: [200, 675, 1350],
+	},
+	{
+		src: "https://a.storyblok.com/f/95455/1350x1080/4aee2a00f4/p5240221.jpg",
+		alt: "",
+		width: 1350,
+		height: 1080,
+		widths: [200, 675, 1350],
+	},
+	{
+		src: "https://a.storyblok.com/f/186233/1365x2048/3e6411d521/20230714-1.jpg",
+		alt: "",
+		width: 1280,
+		height: 1920,
+		widths: [200, 675, 1350],
+	},
+];
+---
+<Carousel images={images} />
+<ul
+	class="entry__entries"
+	id="carouselTargetList"
+>
+	{
+		images.map((img, i) => {
+			return (
+				<li class="entry__elem">
+					<a
+						href={`./?image=${i}`}
+						data-carousel-index={i}
+						class="entry__link"
+					>
+						<Photo {...img} />
+					</a>
+				</li>
+			);
+		})
+	}
+</ul>
+
+<style lang="scss">
+  .entry {
+    &__entries {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__elem {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__img {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    &__link {
+      display: block;
+    }
+  }
+</style>
