@@ -8,31 +8,37 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welcome to Odyssey</h1>
+				<h1>Welkom bij B&B Bosserheide</h1>
 				<p>
-					A marketing website theme built with <a
-						href="https://astro.build"
-						target="_blank"
-						rel="noreferrer">Astro</a
-					> and carefully crafted for startups and businesses.
+					Verscholen tussen de eiken- en dennenbomen. <br/>
+					Dichtbij aan de oevers van het Reindersmeer midden in natuurgebied Maasduinen,
+					Ligt het knusse Bosserheide,
+
+
 				</p>
+			<p>
+				Ontlaad. Kom tot rust. Geniet. <br/>
+				Maak mooie herinneringen..
+
+			</p>
+
 				<div class="hero-btns__container">
-					<Button href="/theme/get-started" customIcon
-						>Get Started
+					<Button href="/reserveren" customIcon
+						>Reserveren
             <Fragment slot="icon">
               <Icon name="ic:baseline-chevron-right"/>
             </Fragment>
             </Button
 					>
-					<Button href="/theme/style-guide" unelevated>Style Guide</Button>
+					<Button href="#fotos" unelevated>Foto's</Button>
 				</div>
         {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
 		</div>
 		<div class="hero-section__image">
 				<picture>
 					<img
-						src="/assets/images/home/classic-hero.jpg"
-						alt="Astro Odyssey"
+						src="https://bosserheide.nl/wp-content/uploads/2022/05/IMG_9566-scaled-e1653814475232.jpeg"
+						alt="Vooraanzicht B&B Bosserheide"
 						id="home-hero-image"
 					/>
 				</picture>
@@ -46,7 +52,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 		min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		align-items: center;
+
 		gap: 1rem;
 	}
 	.hero-section__text {
