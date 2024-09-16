@@ -1,0 +1,40 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'Over Ons | B&B Bosserheide',
+	description: 'Over ons pagina',
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>About us</h1>
+			<p>
+				Ontlaad, kom tot rust, geniet. <br/>
+				Maak mooie herinneringen en voel je thuis in onze B&B
+			</p>
+		</div>
+    <picture slot="image-container">
+      <img
+        src="/assets/images/familie_foto.jpg"
+        alt="Astro Odyssee"
+        id="home-hero-image"
+      />
+    </picture>
+	</HeroSection>
+  <TextSection narrow>
+	  <p>Welkom bij Bosserheide, onze droomplek in het hart van natuurgebied de Maasduinen. Wij zijn Tamar van Dijken, mijn grote liefde Alwin, en onze lieve dochter Annabel. Sinds 2018 wonen we in het pittoreske dorpje Well in Noord-Limburg, omringd door de prachtige natuur die deze regio te bieden heeft.</p>
+
+	  <p>Toen we hier kwamen wonen, was ik hoogzwanger van Annabel. Met veel inzet en liefde hebben we samen gewerkt aan de bouw van ons droomhuis en de verbouwing van het naastgelegen huis, dat nu dienstdoet als onze B&B. We wilden een plek creëren die niet alleen voor ons, maar ook voor onze gasten een oase van rust is—een plek waar je kunt ontspannen, genieten van de natuur, en je even helemaal kunt terugtrekken van de alledaagse drukte.</p>
+
+	  <p>Bij Bosserheide draait alles om het delen van de rust en schoonheid van deze unieke plek. Wij zorgen ervoor dat onze gasten niets tekortkomen. In ons knusse en modern ingerichte huisje, midden in de natuur, kun je genieten van voldoende privacy, rust en ruimte. Met veel passie en oog voor detail creëren we een omgeving waar je je direct thuis voelt.</p>
+
+	  <p>We kijken ernaar uit om je te verwelkomen en samen met jou te genieten van deze prachtige plek. Bij Bosserheide ben je niet alleen te gast, maar deel je een stukje van onze droom.</p>
+
+
+  </TextSection>
+</Layout>
