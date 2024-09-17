@@ -1,7 +1,39 @@
 ---
 const {navData} = Astro.props;
----
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<ul>
+  <li>
+    <a href={translatePath('/')}>
+      {t('nav.home')}
+    </a>
+  </li>
+  <li>
+    <a href={translatePath('/reserveren/')}>
+      {t('nav.reservation')}
+    </a>
+  </li>
+  <li>
+    <a href={translatePath('/appartement/')}>
+      {t('nav.apartment')}
+    </a>
+  </li>
+  <li>
+    <a href={translatePath('/overons/')}>
+      {t('nav.about')}
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/astrodotbuild">
+      {t('nav.twitter')}
+    </a>
+  </li>
+</ul>
+<hr/>
 {navData && <nav>
   <ul>
     {navData.map(navItem => (

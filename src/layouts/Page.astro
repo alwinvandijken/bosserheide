@@ -3,6 +3,8 @@ import { Header, Button, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+import Nav from '../components/core/Nav.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
 
@@ -18,6 +20,8 @@ const { seo } = Astro.props as Props;
 ---
 
 <Layout seo={seo}>
+	<Nav></Nav>
+	<LanguagePicker></LanguagePicker>
 	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
 			<Logo />
