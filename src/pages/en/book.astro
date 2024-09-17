@@ -1,0 +1,76 @@
+---
+import { Container, FeatureCard } from '@components/odyssey-theme';
+import ReservationForm from '../../components/forms/ReservationForm.astro';
+import Layout from '../../layouts/Page.astro';
+---
+
+
+<Layout>
+	<Container>
+		<section class="contact-hero__section">
+			<div class="contact-hero__text-section">
+				<h1>Reserveer je verblijf bij ons</h1>
+				<h3>Datum</h3>
+				<p>
+					Selecteer de datum waarop je wilt verblijven.
+				</p>
+				<h3>Kamers</h3>
+				<p>
+					Onze B&B beschikt over 1 kamer met een tweepersoonsbed en een extra kamer met 2 eenpersoonsbedden.
+					Geef verder aan met hoeveel personen je komt.
+				</p>
+				<h3>Je gegevens</h3>
+				<p>
+					Vul je gegevens in zodat we contact met je kunnen opnemen.
+					Je reservering is pas definitief na bevestiging van ons.
+				</p>
+
+				<p>
+					Mocht je vragen hebben, neem dan gerust contact met ons op.
+				</p>
+				<div>
+					<p>
+						<em><a href="tel:0031638116823">+31 6 38 11 68 23</a></em> • <em
+					><a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a
+					></em
+					>
+					</p>
+				</div>
+			</div>
+			<div class="col-2__container">
+				<ReservationForm />
+			</div>
+		</section>
+
+	</Container>
+</Layout>
+
+<style>
+    .contact-hero__section {
+        margin: var(--section-margin) auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: calc(90vh - var(--navbar-height));
+        gap: 3rem;
+    }
+    .contact-hero__text-section {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--theme-surface-1);
+        border-radius: var(--theme-shape-radius);
+    }
+    .col-2__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    @media (max-width: 768px) {
+        .contact-hero__section {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+

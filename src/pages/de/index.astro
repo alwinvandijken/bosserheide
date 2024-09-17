@@ -1,0 +1,84 @@
+---
+import { Container, StickyTextImageSection } from '@components/odyssey-theme';
+
+import Layout from '../../layouts/Page.astro';
+import HomeHeroSection from '../../components/sections/heros/HomeHeroSection.astro';
+import GeneralCarousel from '../../components/image-carousels/GeneralCarousel.astro';
+
+import reindersmeer_regenboog from '/assets/reindersmeer_regenboog.jpg';
+import leukermeer_luchtfoto from '/assets/leukermeer_luchtfoto.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout>
+	<h1>Wilcommen | de</h1>
+	<HomeHeroSection />
+	<Container>
+		<section id="fotos">
+			<GeneralCarousel></GeneralCarousel>
+		</section>
+	</Container>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h3>Reindersmeer</h3>
+
+			<p>Just 400 meters from our B&B lies the beautiful Reindersmeer, near the former lock in Bosserheide in Well. Since 1999, this lake has been an integral part of the Maasduinen National Park. With its crystal-clear, azure-blue water, it evokes images of Southern Europe on sunny days and truly feels like a little vacation close to home.</p>
+
+			<p>The Reindersmeer area is all about nature. The shores are dominated by a rich vegetation of heath, grasses, mosses, and various plant species, which contribute to the unique character of the landscape. The area is ideal for quiet recreation; cycling, walking, and horseback riding are favorites among visitors here. Swimming and fishing are not allowed to maintain the natural balance and tranquility.</p>
+
+			<p>This lake forms an important ecological connection between the Bergerheide and the Hamert. The variety of flora and fauna in this area is remarkable, making it a beloved spot for nature enthusiasts and photographers. Several hiking routes have been marked, some of which can be shortened with a small ferry across the water—a fun and adventurous way to explore the lake.</p>
+
+			<p>or birdwatchers, Reindersmeer is a paradise. The area is home to many species of waterfowl, and with a bit of luck, you might even spot the majestic sea eagle that occasionally hunts here. Additionally, the lake is surrounded by beautiful viewpoints and spots to quietly enjoy the scenery.
+
+			</p>
+
+			<p>Whether you're here for a relaxing walk, a bike ride through nature, or simply to pause and take in the serene surroundings, Reindersmeer has something for everyone. It’s a hidden gem that you shouldn’t miss during your stay at our B&B.</p>
+
+		</div>
+		<picture slot="image-container">
+			<Image
+				src={reindersmeer_regenboog}
+				alt="Reindersmeer met regenboog"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h3>Leukermeer</h3>
+
+			<p>Het Leukermeer is een ideale en populaire bestemming voor watersporters en recreanten, op slechts een korte afstand van onze B&B. Dit veelzijdige meer biedt een scala aan activiteiten voor jong en oud en staat bekend om zijn twee prachtige jachthavens en het uitnodigende dagstrand. Of je nu een fervent watersporter bent of gewoon wilt ontspannen aan het water, het Leukermeer heeft voor ieder wat wils.</p>
+
+			<p>De mogelijkheden op het Leukermeer zijn eindeloos. Je kunt er zwemmen in het heldere water of je balans testen tijdens een sessie suppen. Voor degenen die liever het water op gaan, zijn er volop mogelijkheden om te zeilen, kajakken, of met een waterfiets de omgeving te verkennen. Heb je zin in een ontspannen vaartocht? Huur dan een sloep en geniet van de rust op het water. Ook voor vissers is het Leukermeer een geliefde plek, dankzij de visrijke wateren en de rustige omgeving.</p>
+
+			<p>Rondom het meer vind je diverse wandelpaden die uitnodigen tot een ontspannen wandeling langs de oever, waar je kunt genieten van het prachtige uitzicht over het water. De omgeving is perfect voor een rustige dag in de natuur, waarbij je kunt uitrusten op het dagstrand of langs de boulevard. Bovendien zijn er verschillende horecagelegenheden rondom het meer waar je kunt genieten van een hapje en een drankje. Met het prachtige uitzicht over het water is dit de perfecte plek om even helemaal tot rust te komen.</p>
+
+			<p>Het Leukermeer is een plek waar je de hele dag door kunt genieten van zowel ontspanning als avontuur. Of je nu de zon ziet opkomen tijdens een vroege ochtendwandeling, de dag doorbrengt op het water, of de avond afsluit met een diner aan het water terwijl je de zon ziet ondergaan—hier creëer je herinneringen die je bijblijven. Tijdens je verblijf bij onze B&B is een bezoek aan het Leukermeer dan ook zeker een aanrader!</p>
+
+		</div>
+		<picture slot="image-container">
+			<Image
+				src={leukermeer_luchtfoto}
+				alt="Reindersmeer met regenboog"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+</Layout>
+
+<style>
+    .feature-card__section {
+        margin: var(--section-margin) auto;
+    }
+    .feature-card__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--theme-grid-gap);
+    }
+    @media (max-width: 768px) {
+        .feature-card__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
