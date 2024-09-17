@@ -10,33 +10,40 @@ export const showDefaultLang = false;
 export const ui = {
 	nl: {
 		'nav.home': 'Home',
-		'nav.reservation': 'Reserveren',
+		'nav.book': 'Reserveren',
 		'nav.apartment': 'Appartement',
-		'nav.about': 'Over Ons',
-		'nav.twitter': 'Twitter',
+		'nav.about_us': 'Over Ons',
 	},
 	en: {
 		'nav.home': 'Home',
-		'nav.reservation': 'Reservation',
+		'nav.book': 'Book',
 		'nav.apartment': 'Apartment',
-		'nav.about': 'About',
-		'nav.twitter': 'Twitter',
+		'nav.about_us': 'About',
 	},
 	de: {
 		'nav.home': 'Home',
-		'nav.reservation': 'Reservieren',
+		'nav.book': 'Reservieren',
 		'nav.apartment': 'Wonung',
-		'nav.about': 'Uber uns'
+		'nav.about_us': 'Uber uns'
 	},
 	fr: {
 		'nav.home': 'Accueil',
-		'nav.reservation': 'Reservé',
+		'nav.book': 'Reservé',
 		'nav.apartment': 'À Apartement',
-		'nav.about': 'À propos',
+		'nav.about_us': 'À propos',
 	},
 } as const;
 
 export const routes = {
+	nl: {
+		'book': 'reserveren',
+		'appartement': 'appart-en',
+	},
+	en: {
+		'reserveren': 'book',
+		'appartement': 'appart-en',
+		'overons': 'about_us',
+	},
 	de: {
 		'services': 'leistungen',
 	},

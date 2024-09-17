@@ -1,5 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 const { navData, rightMenu } = Astro.props;
 ---
 
@@ -59,7 +64,7 @@ const { navData, rightMenu } = Astro.props;
       {navData && <nav>
         <ul>
           {navData.map(navItem => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            (<li><a href={translatePath(navItem.slug)} >{t(navItem.title)}</a></li>)
           ))}
         </ul>
       </nav>}

@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Container  from '../core/Container.astro';
+import LanguagePicker from '../LanguagePicker.astro';
 
 
 const { footerSocials, footerLists, copyrightName, background, color } =
@@ -49,6 +50,9 @@ const { footerSocials, footerLists, copyrightName, background, color } =
           </div>
         ))
       }
+    </div>
+    <div>
+      <LanguagePicker></LanguagePicker>
     </div>
     <div class="footer-copyright__container">
       <p>Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>

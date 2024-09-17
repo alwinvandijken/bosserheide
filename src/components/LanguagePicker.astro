@@ -10,6 +10,7 @@ const route = getRouteFromUrl(Astro.url);
 	{Object.entries(languages).map(([lang, label]) => (
 		<li>
 			<a href={translatePath(`/${route ? route : ''}`, lang)}>{label}</a>
+			<!--<a href={translatePath('/', lang)}>{label}</a>-->
 		</li>
 	))}
 </ul>
