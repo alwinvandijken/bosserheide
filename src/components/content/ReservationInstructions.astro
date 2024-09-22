@@ -1,0 +1,85 @@
+---
+import { getLangFromUrl } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+const localizedContent = {
+	nl: {
+		title: 'Reserveer je verblijf bij ons',
+		steps: [
+			{
+				title: 'Datum',
+				description: 'Selecteer de datum waarop je wilt verblijven.'
+			},
+			{
+				title: 'Kamers',
+				description: 'Onze B&B beschikt over 1 kamer met een tweepersoonsbed en een extra kamer met 2 eenpersoonsbedden. Geef verder aan met hoeveel personen je komt.'
+			},
+			{
+				title: 'Je gegevens',
+				description: 'Vul je gegevens in zodat we contact met je kunnen opnemen. Je reservering is pas definitief na bevestiging van ons.'
+			},
+			{
+				title: 'Vragen',
+				description: 'Mocht je vragen hebben, neem dan gerust contact met ons op.'
+			}
+		]
+	},
+	en: {
+		title: 'Book your stay with us',
+		steps: [
+			{
+				title: 'Date',
+				description: 'Select the date you want to stay.'
+			},
+			{
+				title: 'Rooms',
+				description: 'Our B&B has 1 room with a double bed and an extra room with 2 single beds. Also indicate how many people you are coming with.'
+			},
+			{
+				title: 'Your details',
+				description: 'Fill in your details so we can contact you. Your reservation is only final after confirmation from us.'
+			},
+			{
+				title: 'Questions',
+				description: 'If you have any questions, feel free to contact us.'
+			}
+		]
+	},
+	de: {
+		title: 'Buchen Sie Ihren Aufenthalt bei uns',
+		steps: [
+			{
+				title: 'Datum',
+				description: 'Wählen Sie das Datum aus, an dem Sie übernachten möchten.'
+			},
+			{
+				title: 'Zimmer',
+				description: 'Unser B&B verfügt über 1 Zimmer mit einem Doppelbett und ein zusätzliches Zimmer mit 2 Einzelbetten. Geben Sie auch an, mit wie vielen Personen Sie kommen.'
+			},
+			{
+				title: 'Ihre Daten',
+				description: 'Geben Sie Ihre Daten ein, damit wir Sie kontaktieren können. Ihre Reservierung ist erst nach Bestätigung durch uns endgültig.'
+			},
+			{
+				title: 'Fragen',
+				description: 'Wenn Sie Fragen haben, können Sie uns gerne kontaktieren.'
+			}
+		]
+	}
+
+};
+// if the lang is not found in the content object, default to english
+const content = localizedContent[localizedContent[lang] ? lang : 'en'];
+---
+
+ReservationInstructions
+
+<h1>{content.title}</h1>
+{
+	content.steps.map((step) => (
+	<div>
+		<h3>{step.title}</h3>
+		<p>{step.description}</p>
+	</div>
+		))
+	}

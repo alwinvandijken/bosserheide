@@ -11,5 +11,4 @@ export const nav = [
 		title: 'nav.about_us',
 		slug: '/overons',
 	}
-
 ];

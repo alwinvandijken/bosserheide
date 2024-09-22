@@ -1,82 +1,104 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Container, Button } from '@components/odyssey-theme';
-import settings from '../../../config/settings.js';
-import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 import { Image } from 'astro:assets';
 import logoBosserheideImage from '/assets/logo/WebP/B&B_logo_Transparent@2x.webp';
+import { getLangFromUrl } from '../../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+const localizedContent = {
+	nl: {
+		title: 'Welkom bij B&B Bosserheide',
+		lead: 'Verscholen tussen de eiken- en dennenbomen. \r\n Dichtbij aan de oevers van het Reindersmeer midden in natuurgebied Maasduinen,\nligt het knusse Bosserheide,',
+		sub_lead: 'Ontlaad. Kom tot rust. Geniet. \r\n Maak mooie herinneringen..',
+		book_now: 'Reserveren',
+		book_url: 'reserveren',
+		photos: 'Foto\'s'
+	},
+	en: {
+		title: 'Welcome to B&B Bosserheide',
+		lead: 'Hidden between the oak and pine trees. \r\n Close to the banks of the Reindersmeer in the middle of the Maasduinen nature reserve,\n lies the cozy Bosserheide,',
+		sub_lead: 'Unwind. Relax. Enjoy. \r\n Make beautiful memories..',
+		book_now: 'Book now',
+		book_url: lang + '/book',
+		photos: 'Photos'
+	}, de: {
+		title: 'Willkommen im B&B Bosserheide',
+		lead: 'Versteckt zwischen Eichen und Kiefern. \r\n Nahe den Ufern des Reindersmeer, mitten im Naturpark Maasduinen,\n liegt das gemütliche Bosserheide.',
+		sub_lead: 'Entspannen. Abschalten. Genießen. \r\n Schöne Erinnerungen schaffen.',
+		book_now: 'Jetzt buchen',
+		book_url: lang + '/buchen',
+		photos: 'Fotos'
+	}
+};
+// if the lang is not found in the content object, default to english
+const content = localizedContent[localizedContent[lang] ? lang : 'en'];
 ---
 
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welkom bij B&B Bosserheide</h1>
-				<p>
-					Verscholen tussen de eiken- en dennenbomen. <br/>
-					Dichtbij aan de oevers van het Reindersmeer midden in natuurgebied Maasduinen,
-					ligt het knusse Bosserheide,
-				</p>
-			<p>
-				Ontlaad. Kom tot rust. Geniet. <br/>
-				Maak mooie herinneringen..
-
-			</p>
-
-				<div class="hero-btns__container">
-					<Button href="/reserveren" customIcon
-						>Reserveren
-            <Fragment slot="icon">
-              <Icon name="ic:baseline-chevron-right"/>
-            </Fragment>
-            </Button
-					>
-					<Button href="#fotos" unelevated>Foto's</Button>
-				</div>
-        {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
+			<h1>{content.title}</h1>
+			<p>{content.lead}</p>
+			<p>{content.sub_lead}</p>
+			<div class="hero-btns__container">
+				<Button href={content.book_url} customIcon>
+					{content.book_now}
+					<Fragment slot="icon">
+						<Icon name="ic:baseline-chevron-right" />
+					</Fragment>
+				</Button>
+				<Button href="#fotos" unelevated>{content.photos}</Button>
+			</div>
 		</div>
 		<div class="hero-section__image">
-				<picture>
-					<Image class="bosserheide-logo" src={logoBosserheideImage} alt="Logo B&B Bosserheide" />
-
-				</picture>
+			<picture>
+				<Image class="bosserheide-logo" src={logoBosserheideImage} alt="Logo B&B Bosserheide" />
+			</picture>
 		</div>
 	</section>
 </Container>
 
 <style>
-	.hero-section__section {
-		margin: var(--section-margin) auto;
-		min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+    .hero-section__section {
+        margin: var(--section-margin) auto;
+        min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-		gap: 1rem;
-	}
-	.hero-section__text {
-		justify-self: center;
-		max-width: 50rem;
-	}
-	.hero-btns__container {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-	.hero-btns__container {
-		margin-right: 1rem;
-	}
-	.hero-section__image {
-		display: flex;
-	}
-	.hero-section__image img {
-		width: 100%;
-		height: 100%;
-		max-height: 80vh;
-		object-fit: cover;
-		border-radius: var(--theme-shape-radius);
-	}
-	@media (max-width: 768px) {
-		.hero-section__section {
-			grid-template-columns: 1fr;
-		}
-	}
+        gap: 1rem;
+    }
+
+    .hero-section__text {
+        justify-self: center;
+        max-width: 50rem;
+    }
+
+    .hero-btns__container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-btns__container {
+        margin-right: 1rem;
+    }
+
+    .hero-section__image {
+        display: flex;
+    }
+
+    .hero-section__image img {
+        width: 100%;
+        height: 100%;
+        max-height: 80vh;
+        object-fit: cover;
+        border-radius: var(--theme-shape-radius);
+    }
+
+    @media (max-width: 768px) {
+        .hero-section__section {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
