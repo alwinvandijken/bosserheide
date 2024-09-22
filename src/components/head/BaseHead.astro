@@ -1,7 +1,5 @@
 ---
 import settings from '../../config/settings.js';
-import ThemeProvider from '../theme-switcher/ThemeProvider.astro';
-
 import '../../styles/index.css';
 
 export interface Props {
@@ -19,7 +17,9 @@ const image = new URL(Astro.props.image || './social.webp', Astro.site);
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="/favicon.png" />
 <!-- Primary Meta Tags -->
 <title>{title}</title>

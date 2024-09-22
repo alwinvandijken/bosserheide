@@ -1,0 +1,51 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'Over Ons | B&B Bosserheide',
+	description: 'Over ons pagina'
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Über uns</h1>
+			<p>
+				Entspannen, zur Ruhe kommen, genießen. <br />
+				Schöne Erinnerungen schaffen und sich in unserem B&B wie zu Hause fühlen.
+			</p>
+
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/familie_foto.jpg"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</HeroSection>
+	<TextSection narrow>
+		<p>Willkommen bei Bosserheide, unserem Traumort im Herzen des Naturschutzgebiets Maasduinen. Wir sind Tamar van
+			Dijken, meine große Liebe Alwin und unsere liebe Tochter Annabel. Seit 2018 wohnen wir im malerischen Dorf
+			Well in Nord-Limburg, umgeben von der wunderschönen Natur, die diese Region zu bieten hat.</p>
+
+		<p>Als wir hierher gezogen sind, war ich hochschwanger mit Annabel. Mit viel Einsatz und Liebe haben wir
+			gemeinsam an dem Bau unseres Traumhauses und der Renovierung des angrenzenden Hauses gearbeitet, das nun als
+			unsere B&B dient. Wir wollten einen Ort schaffen, der nicht nur für uns, sondern auch für unsere Gäste eine
+			Oase der Ruhe ist—ein Ort, an dem man entspannen, die Natur genießen und dem Alltagstrubel entfliehen
+			kann.</p>
+
+		<p>Bei Bosserheide dreht sich alles darum, die Ruhe und Schönheit dieses einzigartigen Ortes zu teilen. Wir
+			sorgen dafür, dass es unseren Gästen an nichts fehlt. In unserem gemütlichen und modern eingerichteten
+			Häuschen, mitten in der Natur, kannst du Privatsphäre, Ruhe und Raum genießen. Mit viel Leidenschaft und
+			Liebe zum Detail schaffen wir eine Umgebung, in der du dich sofort wie zu Hause fühlst.</p>
+
+		<p>Wir freuen uns darauf, dich willkommen zu heißen und gemeinsam mit dir diesen wunderschönen Ort zu genießen.
+			Bei Bosserheide bist du nicht nur zu Gast, sondern teilst ein Stück unseres Traums.</p>
+
+
+	</TextSection>
+</Layout>

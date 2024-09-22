@@ -1,15 +1,14 @@
 export const nav = [
 	{
-		title: 'Home',
+		title: 'nav.home',
 		slug: '/',
 	},
 	{
-		title: 'Reserveren',
+		title: 'nav.book',
 		slug: '/reserveren',
 	},
 	{
-		title: 'Over Ons',
+		title: 'nav.about_us',
 		slug: '/overons',
 	}
-
 ];

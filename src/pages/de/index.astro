@@ -1,0 +1,124 @@
+---
+import { Container, StickyTextImageSection } from '@components/odyssey-theme';
+
+import Layout from '../../layouts/Page.astro';
+import HomeHeroSection from '../../components/sections/heros/HomeHeroSection.astro';
+import GeneralCarousel from '../../components/image-carousels/GeneralCarousel.astro';
+
+import reindersmeer_regenboog from '/assets/reindersmeer_regenboog.jpg';
+import leukermeer_luchtfoto from '/assets/leukermeer_luchtfoto.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout>
+	<HomeHeroSection />
+	<Container>
+		<section id="fotos">
+			<GeneralCarousel></GeneralCarousel>
+		</section>
+	</Container>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h3>Reindersmeer</h3>
+
+			<p>Der Leukermeer ist ein ideales und beliebtes Ziel für Wassersportler und Erholungssuchende, nur eine
+				kurze
+				Entfernung von unserem B&B entfernt. Dieser vielseitige See bietet eine Vielzahl von Aktivitäten für
+				Jung
+				und Alt und ist bekannt für seine zwei wunderschönen Yachthäfen und den einladenden Tagesstrand. Ob du
+				ein
+				leidenschaftlicher Wassersportler bist oder einfach nur am Wasser entspannen möchtest, der Leukermeer
+				hat
+				für jeden etwas zu bieten.</p>
+
+			<p>Die Möglichkeiten am Leukermeer sind endlos. Du kannst im klaren Wasser schwimmen oder dein Gleichgewicht
+				bei einer SUP-Session testen. Für diejenigen, die lieber aufs Wasser hinaus möchten, gibt es zahlreiche
+				Möglichkeiten zum Segeln, Kajakfahren oder um die Umgebung mit einem Tretboot zu erkunden. Hast du Lust
+				auf
+				eine entspannte Bootsfahrt? Miete ein Boot und genieße die Ruhe auf dem Wasser. Auch Angler finden am
+				Leukermeer ihren Lieblingsplatz, dank der fischreichen Gewässer und der ruhigen Umgebung.</p>
+
+			<p>Rund um den See findest du verschiedene Wanderwege, die zu einem entspannten Spaziergang entlang des
+				Ufers
+				einladen, wo du die wunderschöne Aussicht auf das Wasser genießen kannst. Die Umgebung ist ideal für
+				einen
+				ruhigen Tag in der Natur, bei dem du am Tagesstrand oder entlang der Promenade entspannen kannst.
+				Darüber
+				hinaus gibt es mehrere gastronomische Einrichtungen rund um den See, in denen du bei einem Snack und
+				einem
+				Getränk verweilen kannst. Mit dem herrlichen Blick auf das Wasser ist dies der perfekte Ort, um zur Ruhe
+				zu
+				kommen.</p>
+
+			<p>Der Leukermeer ist ein Ort, an dem du den ganzen Tag über sowohl Entspannung als auch Abenteuer genießen
+				kannst. Ob du den Sonnenaufgang bei einem frühen Morgenspaziergang beobachtest, den Tag auf dem Wasser
+				verbringst oder den Abend mit einem Abendessen am Wasser abschließt, während du den Sonnenuntergang
+				genießt—hier schaffst du Erinnerungen, die bleiben. Während deines Aufenthalts in unserem B&B ist ein
+				Besuch am Leukermeer auf jeden Fall empfehlenswert!</p>
+
+
+		</div>
+		<picture slot="image-container">
+			<Image
+				src={reindersmeer_regenboog}
+				alt="Reindersmeer met regenboog"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h3>Leukermeer</h3>
+
+			<p>The Leukermeer is an ideal and popular destination for water sports enthusiasts and leisure seekers, just
+				a short distance from our B&B. This versatile lake offers a wide range of activities for all ages and is
+				renowned for its two beautiful marinas and inviting day beach. Whether you're an avid water sports
+				enthusiast or simply want to relax by the water, the Leukermeer has something for everyone.</p>
+
+			<p>The possibilities at the Leukermeer are endless. You can swim in the clear waters or test your balance
+				with a paddleboarding session. For those who prefer to get out on the water, there are plenty of options
+				for sailing, kayaking, or exploring the surroundings on a pedal boat. If you're in the mood for a
+				leisurely boat trip, you can rent a sloop and enjoy the tranquility on the water. The Leukermeer is also
+				a favorite spot for anglers, thanks to its fish-rich waters and peaceful environment.</p>
+
+			<p>Around the lake, you'll find various walking trails that invite you to take a relaxing stroll along the
+				shore, where you can enjoy the beautiful view of the water. The area is perfect for a quiet day in
+				nature, where you can unwind on the day beach or along the promenade. Additionally, there are several
+				dining options around the lake where you can enjoy a bite to eat and a drink. With the stunning view of
+				the water, this is the perfect place to unwind.</p>
+
+			<p>The Leukermeer is a place where you can enjoy both relaxation and adventure throughout the day. Whether
+				you're watching the sunrise during an early morning walk, spending the day on the water, or ending the
+				evening with a lakeside dinner as the sun sets—this is a place to create lasting memories. During your
+				stay at our B&B, a visit to the Leukermeer is highly recommended!</p>
+
+
+		</div>
+		<picture slot="image-container">
+			<Image
+				src={leukermeer_luchtfoto}
+				alt="Reindersmeer met regenboog"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+</Layout>
+
+<style>
+    .feature-card__section {
+        margin: var(--section-margin) auto;
+    }
+
+    .feature-card__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--theme-grid-gap);
+    }
+
+    @media (max-width: 768px) {
+        .feature-card__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
