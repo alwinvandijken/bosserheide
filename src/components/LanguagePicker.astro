@@ -5,7 +5,21 @@ import { getLangFromUrl, useTranslatedPath, getRouteFromUrl } from '../i18n/util
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 const route = getRouteFromUrl(Astro.url);
+
+const localizedContent = {
+	nl: {
+		title: 'Talen'
+	},
+	en: {
+		title: 'Languages'
+	},
+	de: {
+		title: 'Sprachen'
+	}
+};
+const content = localizedContent[localizedContent[lang] ? lang : 'en'];
 ---
+<p><strong>{content.title}</strong></p>
 <ul>
 	{Object.entries(languages).map(([lang, label]) => (
 		<li>
