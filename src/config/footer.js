@@ -1,15 +1,15 @@
 export const footerSocials = [
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/bosserheide',
-    icon: "mdi:facebook",
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/bosserheide',
-    icon: "mdi:instagram",
-  }
-]
+	{
+		name: 'Facebook',
+		url: 'https://www.facebook.com/bosserheide',
+		icon: 'mdi:facebook'
+	},
+	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/bosserheide',
+		icon: 'mdi:instagram'
+	}
+];
 
 export const footerLists = [
 
@@ -17,15 +17,14 @@ export const footerLists = [
 		title: 'Bed & Breakfast',
 		items: [
 			{
-				title: 'Reserveren',
-				slug: '/reserveren',
+				title: 'nav.book',
+				slug: '/reserveren'
 			},
 			{
-				title: 'Over ons',
-				slug: '/overons',
+				title: 'nav.about_us',
+				slug: '/overons'
 			}
-
-		],
+		]
 	}
 
 ];
