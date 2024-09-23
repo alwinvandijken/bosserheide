@@ -71,9 +71,6 @@ const localizedContent = {
 // if the lang is not found in the content object, default to english
 const content = localizedContent[localizedContent[lang] ? lang : 'en'];
 ---
-
-ReservationInstructions
-
 <h1>{content.title}</h1>
 {
 	content.steps.map((step) => (
