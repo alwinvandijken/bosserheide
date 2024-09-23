@@ -2,7 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import Container from '../core/Container.astro';
 import LanguagePicker from '../LanguagePicker.astro';
-
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const { footerSocials, footerLists, copyrightName, background, color } =
 	Astro.props;
@@ -42,9 +45,7 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 						<p><strong>{list.title}</strong></p>
 						<ul class="footer-link__list">
 							{list.items.map((item) => (
-								<li>
-									<a href={item.slug}>{item.title}</a>
-								</li>
+								<li><a href={translatePath(item.slug)}>{t(item.title)}</a></li>
 							))}
 						</ul>
 					</div>
