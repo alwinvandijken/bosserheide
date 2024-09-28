@@ -1,33 +1,41 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-import ReservationForm from '../../components/forms/ReservationForm.astro';
 import Layout from '../../layouts/Page.astro';
-import ReservationInstructions from '../../components/content/ReservationInstructions.astro';
+import { Container } from '@components/odyssey-theme';
+import GoogleMap from '../../components/maps/GoogleMap.astro';
 
 const seo = {
-	title: 'Buchen Sie Ihren Aufenthalt bei B&B Bosserheode | Jetzt reservieren',
-	description: 'Buchen Sie ganz einfach Ihren Aufenthalt im B&B Bosserheode und genießen Sie Komfort, Gastfreundschaft und Natur in Well, Limburg.'
+	title: 'Kontakt | B&B Bosserheode',
+	description: 'Kontaktieren Sie B&B Bosserheode für Fragen oder Buchungen. Wir sind telefonisch oder per E-Mail erreichbar.'
 };
 ---
 <Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<ReservationInstructions></ReservationInstructions>
+				<h1>Kontaktieren Sie uns</h1>
+				<p>
+					Möchten Sie mehr über Ihren Aufenthalt im B&B Bosserheode erfahren? Wir sind für Sie da! Ob Sie
+					Fragen
+					zur Verfügbarkeit haben, spezielle Wünsche besprechen möchten oder Tipps für die schöne Umgebung
+					suchen,
+					wir helfen Ihnen gerne weiter.
+				</p>
+				<p>Sie können uns telefonisch oder per E-Mail erreichen.
+					Wir bemühen uns, so schnell wie möglich zu antworten, damit Sie sich auf einen erholsamen Aufenthalt
+					freuen können.
+				</p>
 				<div>
 					<p>
-						<em><a href="tel:0031638116823">+31 6 38 11 68 23</a></em> • <em
-					><a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a
-					></em
-					>
+						<em><a href="tel:+31638116823">+31 6 38 11 68 23</a></em> • <em>
+						<a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a>
+					</em>
 					</p>
 				</div>
 			</div>
 			<div class="col-2__container">
-				<ReservationForm />
+				<GoogleMap />
 			</div>
 		</section>
-
 	</Container>
 </Layout>
 
@@ -44,7 +52,7 @@ const seo = {
         padding: 2rem;
         display: flex;
         flex-direction: column;
-
+        justify-content: center;
         background-color: var(--theme-surface-1);
         border-radius: var(--theme-shape-radius);
     }
@@ -53,7 +61,6 @@ const seo = {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
     }
 
     @media (max-width: 768px) {
@@ -62,4 +69,3 @@ const seo = {
         }
     }
 </style>
-

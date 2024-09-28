@@ -13,6 +13,8 @@ const localizedContent = {
 		sub_lead: 'Ontlaad. Kom tot rust. Geniet. \r\n Maak mooie herinneringen..',
 		book_now: 'Reserveren',
 		book_url: 'reserveren',
+		contact: 'Contact',
+		contact_url: 'contact',
 		photos: 'Foto\'s'
 	},
 	en: {
@@ -21,6 +23,8 @@ const localizedContent = {
 		sub_lead: 'Unwind. Relax. Enjoy. \r\n Make beautiful memories..',
 		book_now: 'Book now',
 		book_url: 'book',
+		contact: 'Contact',
+		contact_url: 'contact',
 		photos: 'Photos'
 	}, de: {
 		title: 'Willkommen im B&B Bosserheide',
@@ -28,6 +32,8 @@ const localizedContent = {
 		sub_lead: 'Entspannen. Abschalten. Genießen. \r\n Schöne Erinnerungen schaffen.',
 		book_now: 'Jetzt buchen',
 		book_url: 'buchen',
+		contact: 'Kontakt',
+		contact_url: 'kontakt',
 		photos: 'Fotos'
 	}
 };
@@ -46,6 +52,12 @@ const content = localizedContent[localizedContent[lang] ? lang : 'en'];
 					{content.book_now}
 					<Fragment slot="icon">
 						<Icon name="ic:baseline-chevron-right" />
+					</Fragment>
+				</Button>
+				<Button href={content.contact_url} customIcon>
+					{content.contact}
+					<Fragment slot="icon">
+						<Icon name="mdi:contact" />
 					</Fragment>
 				</Button>
 				<Button href="#fotos" unelevated>{content.photos}</Button>

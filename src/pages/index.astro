@@ -8,10 +8,13 @@ import GeneralCarousel from '../components/image-carousels/GeneralCarousel.astro
 import reindersmeer_regenboog from '/assets/reindersmeer_regenboog.jpg';
 import leukermeer_luchtfoto from '/assets/leukermeer_luchtfoto.jpg';
 import { Image } from 'astro:assets';
+
+const seo = {
+	title: 'Welkom bij B&B Bosserheode | Bosserheide 35, Well (L)',
+	description: 'Beleef een onvergetelijk verblijf in B&B Bosserheode. Rust en natuur wachten op u in de prachtige omgeving van Well.'
+};
 ---
-
-<Layout>
-
+<Layout seo={seo}>
 	<HomeHeroSection />
 	<Container>
 		<section id="fotos">
