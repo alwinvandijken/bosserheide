@@ -44,9 +44,18 @@ const image = new URL(Astro.props.image || './social.webp', Astro.site);
 
 
 <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PC3CSK7TJN"></script>
 <script>
-  var host = window.location.hostname;
-  if(host != 'localhost') {
-    // Place Google Analytics code here.
-  }
+	var host = window.location.hostname;
+	if (host != 'localhost') {
+		// Place Google Analytics code here.
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		gtag('js', new Date());
+		gtag('config', 'G-PC3CSK7TJN');
+	}
 </script>

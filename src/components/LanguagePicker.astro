@@ -20,7 +20,7 @@ const localizedContent = {
 const content = localizedContent[localizedContent[lang] ? lang : 'en'];
 ---
 <p><strong>{content.title}</strong></p>
-<ul>
+<ul class="footer-link__list">
 	{Object.entries(languages).map(([lang, label]) => (
 		<li>
 			<a href={translatePath(`/${route ? route : ''}`, lang)}>{label}</a>

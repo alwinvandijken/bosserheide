@@ -2,10 +2,13 @@
 import { Container, FeatureCard } from '@components/odyssey-theme';
 import ReservationForm from '../components/forms/ReservationForm.astro';
 import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Reserveren bij B&B Bosserheode | Boek uw verblijf',
+	description: 'Boek eenvoudig uw verblijf bij B&B Bosserheode en geniet van comfort, gastvrijheid en natuur in Well, Limburg.'
+};
 ---
-
-
-<Layout>
+<Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
@@ -53,6 +56,7 @@ import Layout from '../layouts/Page.astro';
         min-height: calc(90vh - var(--navbar-height));
         gap: 3rem;
     }
+
     .contact-hero__text-section {
         padding: 2rem;
         display: flex;
@@ -61,12 +65,14 @@ import Layout from '../layouts/Page.astro';
         background-color: var(--theme-surface-1);
         border-radius: var(--theme-shape-radius);
     }
+
     .col-2__container {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
+
     @media (max-width: 768px) {
         .contact-hero__section {
             grid-template-columns: 1fr;

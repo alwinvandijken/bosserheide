@@ -1,33 +1,39 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-import ReservationForm from '../../components/forms/ReservationForm.astro';
 import Layout from '../../layouts/Page.astro';
-import ReservationInstructions from '../../components/content/ReservationInstructions.astro';
+import { Container } from '@components/odyssey-theme';
+import GoogleMap from '../../components/maps/GoogleMap.astro';
 
 const seo = {
-	title: 'Buchen Sie Ihren Aufenthalt bei B&B Bosserheode | Jetzt reservieren',
-	description: 'Buchen Sie ganz einfach Ihren Aufenthalt im B&B Bosserheode und genießen Sie Komfort, Gastfreundschaft und Natur in Well, Limburg.'
+	title: 'Contact | B&B Bosserheode',
+	description: 'Get in touch with B&B Bosserheode for questions or bookings. We are available via phone or email.'
 };
 ---
 <Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<ReservationInstructions></ReservationInstructions>
+				<h1>Contact Us</h1>
+				<p>
+					Do you want to know more about your stay at B&B Bosserheode? We are here for you! Whether you have
+					questions
+					about availability, want to discuss special requests, or need tips about the beautiful surroundings,
+					we are happy to assist you.
+				</p>
+				<p>You can reach us by phone or email.
+					We strive to respond as quickly as possible, so you can look forward to a relaxing stay.
+				</p>
 				<div>
 					<p>
-						<em><a href="tel:0031638116823">+31 6 38 11 68 23</a></em> • <em
-					><a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a
-					></em
-					>
+						<em><a href="tel:+31638116823">+31 6 38 11 68 23</a></em> • <em>
+						<a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a>
+					</em>
 					</p>
 				</div>
 			</div>
 			<div class="col-2__container">
-				<ReservationForm />
+				<GoogleMap />
 			</div>
 		</section>
-
 	</Container>
 </Layout>
 
@@ -44,7 +50,7 @@ const seo = {
         padding: 2rem;
         display: flex;
         flex-direction: column;
-
+        justify-content: center;
         background-color: var(--theme-surface-1);
         border-radius: var(--theme-shape-radius);
     }
@@ -53,7 +59,6 @@ const seo = {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
     }
 
     @media (max-width: 768px) {
@@ -62,4 +67,3 @@ const seo = {
         }
     }
 </style>
-

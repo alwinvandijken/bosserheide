@@ -23,6 +23,10 @@ export const footerLists = [
 			{
 				title: 'nav.about_us',
 				slug: '/overons'
+			},
+			{
+				title: 'nav.contact',
+				slug: '/contact'
 			}
 		]
 	}

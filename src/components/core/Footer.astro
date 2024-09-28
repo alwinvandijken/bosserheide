@@ -19,6 +19,23 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 			<div class="footer-brand__container">
 				<div>
 					<slot name="logo" />
+					<ul class="footer-link__list">
+						<li>Bosserheide 35</li>
+						<li>5855 EB Well</li>
+						<li>
+							<a href="tel:+31638116823" class="footer-socials__link">
+								<Icon name="mdi:phone" width="24" height="24" />
+								+31 6 38 11 68 23</a>
+
+						</li>
+						<li>
+							<a href="mailto:info@bosserheide.nl" class="footer-socials__link">
+								<Icon name="mdi:email" width="24" height="24" />
+								info@bosserheide.nl
+							</a>
+						</li>
+					</ul>
+
 				</div>
 				<ul class="footer-socials__list">
 					{
@@ -86,6 +103,14 @@ const { footerSocials, footerLists, copyrightName, background, color } =
         display: flex;
         list-style: none;
     }
+
+    .footer-contact__list {
+        margin: 1rem 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
 
     .footer-socials__item {
         margin-right: 0.5rem;

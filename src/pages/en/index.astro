@@ -8,9 +8,13 @@ import GeneralCarousel from '../../components/image-carousels/GeneralCarousel.as
 import reindersmeer_regenboog from '/assets/reindersmeer_regenboog.jpg';
 import leukermeer_luchtfoto from '/assets/leukermeer_luchtfoto.jpg';
 import { Image } from 'astro:assets';
----
 
-<Layout>
+const seo = {
+	title: 'Welcome to B&B Bosserheode | Bosserheide 35, Well (L)',
+	description: 'Experience an unforgettable stay at B&B Bosserheode. Peace and nature await you in the beautiful surroundings of Well.'
+};
+---
+<Layout seo={seo}>
 	<HomeHeroSection />
 	<Container>
 		<section id="fotos">
@@ -32,18 +36,20 @@ import { Image } from 'astro:assets';
 				The area is ideal for quiet recreation; cycling, walking, and horseback riding are favorites among
 				visitors here. Swimming and fishing are not allowed to maintain the natural balance and tranquility.</p>
 
-			<p>This lake forms an important ecological connection between the Bergerheide and the Hamert. The variety of
+			<p>
+				This lake forms an important ecological connection between the Bergerheide and the Hamert. The variety
+				of
 				flora and fauna in this area is remarkable, making it a beloved spot for nature enthusiasts and
 				photographers. Several hiking routes have been marked, some of which can be shortened with a small ferry
-				across the water—a fun and adventurous way to explore the lake.</p>
-
-			<p>or birdwatchers, Reindersmeer is a paradise. The area is home to many species of waterfowl, and with a
+				across the water—a fun and adventurous way to explore the lake.
+			</p>
+			<p>
+				For birdwatchers, Reindersmeer is a paradise. The area is home to many species of waterfowl, and with a
 				bit of luck, you might even spot the majestic sea eagle that occasionally hunts here. Additionally, the
 				lake is surrounded by beautiful viewpoints and spots to quietly enjoy the scenery.
-
 			</p>
-
-			<p>Whether you're here for a relaxing walk, a bike ride through nature, or simply to pause and take in the
+			<p>
+				Whether you're here for a relaxing walk, a bike ride through nature, or simply to pause and take in the
 				serene surroundings, Reindersmeer has something for everyone. It’s a hidden gem that you shouldn’t miss
 				during your stay at our B&B.</p>
 

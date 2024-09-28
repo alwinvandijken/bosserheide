@@ -33,31 +33,36 @@ export const ui = {
 		'nav.home': 'Home',
 		'nav.book': 'Reserveren',
 		'nav.apartment': 'Appartement',
-		'nav.about_us': 'Over Ons'
+		'nav.about_us': 'Over Ons',
+		'nav.contact': 'Contact'
 	},
 	en: {
 		'nav.home': 'Home',
 		'nav.book': 'Book',
 		'nav.apartment': 'Apartment',
-		'nav.about_us': 'About'
+		'nav.about_us': 'About',
+		'nav.contact': 'Contact'
 	},
 	de: {
 		'nav.home': 'Startseite',
 		'nav.book': 'Buchen',
 		'nav.apartment': 'Wonung',
-		'nav.about_us': 'Über uns'
+		'nav.about_us': 'Über uns',
+		'nav.contact': 'Kontakt'
 	},
 	fr: {
 		'nav.home': 'Accueil',
 		'nav.book': 'Réserver',
 		'nav.apartment': 'Appartement',
-		'nav.about_us': 'À propos'
+		'nav.about_us': 'À propos',
+		'nav.contact': 'Contact'
 	},
 	es: {
 		'nav.home': 'Inicio',
 		'nav.book': 'Reservar',
 		'nav.apartment': 'Apartamento',
-		'nav.about_us': 'Sobre nosotros'
+		'nav.about_us': 'Sobre nosotros',
+		'nav.contact': 'Contacto'
 	}
 } as const;
 
@@ -69,21 +74,25 @@ export const routes = {
 	en: {
 		'reserveren': 'book',
 		'appartement': 'apartment',
-		'overons': 'about'
+		'overons': 'about',
+		'contact': 'contact'
 	},
 	de: {
 		'reserveren': 'buchen',
 		'appartement': 'wohnung',
-		'overons': 'uber_uns'
+		'overons': 'uber_uns',
+		'contact': 'kontakt'
 	},
 	fr: {
 		'reserveren': 'reserver',
 		'appartement': 'appartement',
-		'overons': 'a_propos'
+		'overons': 'a_propos',
+		'contact': 'contact'
 	},
 	es: {
 		'reserveren': 'reservar',
 		'appartement': 'apartamento',
-		'overons': 'sobre_nosotros'
+		'overons': 'sobre_nosotros',
+		'contact': 'contacto'
 	}
 };
