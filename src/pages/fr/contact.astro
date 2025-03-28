@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+import GoogleMap from '../../components/maps/GoogleMap.astro';
+
+const seo = {
+	title: 'Contact | B&B Bosserheode',
+	description: 'Get in touch with B&B Bosserheode for questions or bookings. We are available via phone or email.'
+};
+---
+<Layout seo={seo}>
+	<Container>
+		<section class="contact-hero__section">
+			<div class="contact-hero__text-section">
+				<h1>Contact Us</h1>
+				<p>
+					Do you want to know more about your stay at B&B Bosserheode? We are here for you! Whether you have
+					questions
+					about availability, want to discuss special requests, or need tips about the beautiful surroundings,
+					we are happy to assist you.
+				</p>
+				<p>You can reach us by phone or email.
+					We strive to respond as quickly as possible, so you can look forward to a relaxing stay.
+				</p>
+				<div>
+					<p>
+						<em><a href="tel:+31638116823">+31 6 38 11 68 23</a></em> • <em>
+						<a href="mailto:info@bosserheide.nl">info@bosserheide.nl</a>
+					</em>
+					</p>
+				</div>
+			</div>
+			<div class="col-2__container">
+				<GoogleMap />
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+    .contact-hero__section {
+        margin: var(--section-margin) auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: calc(90vh - var(--navbar-height));
+        gap: 3rem;
+    }
+
+    .contact-hero__text-section {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--theme-surface-1);
+        border-radius: var(--theme-shape-radius);
+    }
+
+    .col-2__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .contact-hero__section {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

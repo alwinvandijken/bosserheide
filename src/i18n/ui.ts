@@ -1,7 +1,8 @@
 export const languages = {
 	nl: 'Nederlands',
 	en: 'English',
-	de: 'Deutch'
+	de: 'Deutsch',
+	fr: 'Français'
 };
 
 export const defaultLang = 'nl';

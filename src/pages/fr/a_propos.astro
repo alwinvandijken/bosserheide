@@ -1,0 +1,48 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'About Us | B&B Bosserheode',
+	description: 'Meet Tamar and discover the story behind B&B Bosserheode. Your perfect retreat for a peaceful stay in Well.'
+};
+---
+<Layout seo={seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>About us</h1>
+			<p>
+				Unwind, relax, enjoy. <br />
+				Create beautiful memories and feel at home in our B&B.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/familie_foto.jpg"
+				alt="Family van Dijken - B&B Bosserheide"
+				id="home-hero-image"
+			/>
+		</picture>
+	</HeroSection>
+	<TextSection narrow>
+		<p>Welcome to Bosserheide, our dream place in the heart of the Maasduinen nature reserve. We are Tamar van
+			Dijken, my great love Alwin, and our dear daughter Annabel. Since 2018, we have been living in the
+			picturesque village of Well in North Limburg, surrounded by the beautiful nature that this region has to
+			offer.</p>
+
+		<p>When we moved here, I was heavily pregnant with Annabel. With a lot of dedication and love, we worked
+			together on building our dream house and renovating the adjacent house, which now serves as our B&B. We
+			wanted to create a place that would be an oasis of peace not just for us but also for our guests—a place
+			where you can relax, enjoy nature, and take a break from the daily hustle and bustle.</p>
+
+		<p>At Bosserheide, everything revolves around sharing the tranquility and beauty of this unique location. We
+			ensure that our guests want for nothing. In our cozy and modernly furnished cottage, set in the middle of
+			nature, you can enjoy ample privacy, peace, and space. With great passion and attention to detail, we create
+			an environment where you will immediately feel at home.</p>
+
+		<p>We look forward to welcoming you and sharing the joy of this beautiful place with you. At Bosserheide, you
+			are not just a guest—you share a piece of our dream.</p>
+
+	</TextSection>
+</Layout>
