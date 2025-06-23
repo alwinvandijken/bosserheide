@@ -47,17 +47,15 @@ const flagEmoji = {
         background: transparent;
         border: 1px solid var(--theme-divider);
         border-radius: 999rem;
+        opacity: 0.72;
 
-        font-family: inherit;
-        font-size: var(--text-sm);
-        line-height: 1.25rem;
-        color: var(--theme-text-lighter);
+
         cursor: pointer;
     }
 
     .language-select:hover,
     .language-select:focus {
-        color: var(--theme-text);
+
         border-color: var(--theme-text);
     }
 
@@ -68,17 +66,15 @@ const flagEmoji = {
 
     /* Custom dropdown arrow */
     .language-select-container::after {
-        content: "▼";
-        font-size: 0.7em;
+
+
         position: absolute;
         right: 1rem;
         top: 50%;
         transform: translateY(-50%);
         pointer-events: none;
-        color: var(--theme-text-lighter);
+
     }
 
-    .language-select-container:hover::after {
-        color: var(--theme-text);
-    }
+
 </style>
