@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import LanguagePicker from '@components/LanguagePicker.astro';
+import LanguageSelect from '@components/LanguageSelect.astro';
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -69,6 +71,7 @@ const { navData, rightMenu } = Astro.props;
 								<li><a href={translatePath(navItem.slug)}>{t(navItem.title)}</a></li>)
 						))}
 					</ul>
+					<LanguageSelect/>
 				</nav>}
 		</slot>
 	</div>
