@@ -2,6 +2,8 @@
 import { Container, StickyTextImageSection } from '@components/odyssey-theme';
 
 import Layout from '@layouts/Page.astro';
+
+import YouTubeEmbedSection from '@components/sections/YouTubeEmbedSection.astro';
 import HomeHeroSection from '@components/sections/heros/HomeHeroSection.astro';
 import GeneralCarousel from '@components/image-carousels/GeneralCarousel.astro';
 
@@ -15,7 +17,9 @@ const seo = {
 };
 ---
 <Layout seo={seo}>
+
 	<HomeHeroSection />
+	<YouTubeEmbedSection url="https://youtu.be/2fZW6yvaiMg" rounded="15" />
 	<Container>
 		<section id="fotos">
 			<GeneralCarousel></GeneralCarousel>
