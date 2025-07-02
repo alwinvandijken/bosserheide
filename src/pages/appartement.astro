@@ -4,16 +4,17 @@ import {
 	AnnouncementBar,
 	Button,
 	Container,
-	CustomerQuoteSection,
+	CustomerQuoteSection
 } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
 import Amenities from '../components/Amenities.astro';
+
 import CloudinaryCarousel from '../components/image-carousels/DynamicCloudinaryCarousel.astro';
 
 const seo = {
 	title: 'Appartement | B&B Bosserheide',
-	description: 'Ontdek ons ruime en comfortabele appartement in B&B Bosserheide, gelegen in het prachtige Well (Limburg).',
+	description: 'Ontdek ons ruime en comfortabele appartement in B&B Bosserheide, gelegen in het prachtige Well (Limburg).'
 };
 ---
 
@@ -29,7 +30,8 @@ const seo = {
 		</div>
 		<div slot="btns-container">
 			<Button href="/reserveren" customIcon>
-				Reserveer nu <Fragment slot="icon">
+				Reserveer nu
+				<Fragment slot="icon">
 					<Icon name="ic:baseline-chevron-right" />
 				</Fragment>
 			</Button>
@@ -82,8 +84,10 @@ const seo = {
 		<div class="apartment-location">
 			<h2>Omgeving</h2>
 			<p>
-				B&B Bosserheide is gelegen in het prachtige Well (Limburg), aan de rand van Nationaal Park De Maasduinen.
-				De omgeving is perfect voor wandel- en fietstochten door de natuur. Het historische stadje Arcen met zijn
+				B&B Bosserheide is gelegen in het prachtige Well (Limburg), aan de rand van Nationaal Park De
+				Maasduinen.
+				De omgeving is perfect voor wandel- en fietstochten door de natuur. Het historische stadje Arcen met
+				zijn
 				thermale baden en kasteeltuinen ligt op slechts 10 minuten rijden.
 			</p>
 			<p>
@@ -102,43 +106,43 @@ const seo = {
 </Layout>
 
 <style>
-	.apartment-intro, .apartment-location {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 2rem 0;
-	}
+    .apartment-intro, .apartment-location {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
 
-	.carousel-section {
-		padding: 4rem 0;
-		background-color: var(--theme-surface-1);
-	}
+    .carousel-section {
+        padding: 4rem 0;
+        background-color: var(--theme-surface-1);
+    }
 
-	.carousel-section h2 {
-		text-align: center;
-		margin-bottom: 2rem;
-	}
+    .carousel-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 
-	.amenities-intro {
-		text-align: center;
-		max-width: 800px;
-		margin: 0 auto 2rem;
-	}
+    .amenities-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
 
-	ul {
-		margin-left: 1.5rem;
-		margin-bottom: 2rem;
-	}
+    ul {
+        margin-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
 
-	li {
-		margin-bottom: 0.5rem;
-	}
+    li {
+        margin-bottom: 0.5rem;
+    }
 
-	h2 {
-		margin-bottom: 1rem;
-	}
+    h2 {
+        margin-bottom: 1rem;
+    }
 
-	p {
-		margin-bottom: 1.5rem;
-		line-height: 1.6;
-	}
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
 </style>

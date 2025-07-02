@@ -1,42 +1,45 @@
 ---
 interface Props {
-  source?: string;
-  showTitle?: boolean;
+	source?: string;
+	showTitle?: boolean;
 }
 
 const { source = 'apartment', showTitle = true } = Astro.props;
 
 import Container from '../components/core/Container.astro';
 import { Icon } from 'astro-icon/components';
+import data from '../data/amenities.json';
 
 // Fetch amenities from API
 const response = await fetch(`${Astro.url.origin}/api/amenities.json?source=${source}`);
-const amenitiesLists = await response.json();
+// const amenitiesLists = await response.json();
+const amenitiesLists = data.apartment;
 ---
 
 <Container>
 	{showTitle && <h1>Voorzieningen</h1>}
 
 	<div class="amenities-grid__container">
-	{
-		amenitiesLists.map((list) => (
-			<div class="amenity-category">
-				<p class="amenity-category__title">
-					<Icon name={list.icon} width={24} height={24} />
-					<strong>{list.title}</strong>
-				</p>
+		{
+			amenitiesLists.map((list) => (
+				<div class="amenity-category">
+					<p class="amenity-category__title">
+						<Icon name={list.icon} width={24} height={24} />
+						<strong>{list.title}</strong>
+					</p>
 
-				<ul class="amenity-list">
-					{list.items.map((item) => (
-						<li class="amenity-item">
-							{item.icon && <Icon name={item.icon} width={16} height={16} />}
-							<span>{item.title}</span>
-						</li>
-					))}
-				</ul>
-			</div>
-		))
-	}
+					<ul class="amenity-list">
+						{list.items.map((item) => (
+							<li class="amenity-item">
+								{item.icon &&
+									<Icon name={item.icon} width={16} height={16} />}
+								<span>{item.title}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
 	</div>
 </Container>
 
@@ -71,7 +74,7 @@ const amenitiesLists = await response.json();
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     @media (max-width: 768px) {
