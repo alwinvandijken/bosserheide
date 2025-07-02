@@ -1,6 +1,7 @@
 ---
 import settings from '../../config/settings.js';
 import '../../styles/index.css';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 export interface Props {
 	title?: string;
@@ -13,6 +14,57 @@ const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
 const image = new URL(Astro.props.image || './social.webp', Astro.site);
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Create JSON-LD script content
+const jsonLdContent = `{
+  "@context": "https://schema.org",
+  "@type": "BedAndBreakfast",
+  "name": "${t('jsonld.name')}",
+  "image": [
+    "${t('jsonld.image1')}",
+    "${t('jsonld.image2')}"
+  ],
+  "@id": "${t('jsonld.url')}",
+  "url": "${t('jsonld.url')}",
+  "telephone": "${t('jsonld.telephone')}",
+  "email": "${t('jsonld.email')}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "${t('jsonld.streetAddress')}",
+    "addressLocality": "${t('jsonld.addressLocality')}",
+    "postalCode": "${t('jsonld.postalCode')}",
+    "addressCountry": "${t('jsonld.addressCountry')}"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": ${t('jsonld.latitude')},
+    "longitude": ${t('jsonld.longitude')}
+  },
+  "priceRange": "${t('jsonld.priceRange')}",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "${t('jsonld.amenity1')}", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "${t('jsonld.amenity2')}", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "${t('jsonld.amenity3')}", "value": false }
+  ],
+  "description": "${t('jsonld.description')}",
+  "checkinTime": "${t('jsonld.checkinTime')}",
+  "checkoutTime": "${t('jsonld.checkoutTime')}",
+  "containsPlace": {
+    "@type": "Room",
+    "name": "${t('jsonld.roomName')}",
+    "bed": {
+      "@type": "BedDetails",
+      "type": "${t('jsonld.bedType')}"
+    },
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": ${t('jsonld.maxValue')}
+    }
+  }
+}`;
 ---
 
 <!-- Global Metadata -->
@@ -58,4 +110,8 @@ const image = new URL(Astro.props.image || './social.webp', Astro.site);
 		gtag('js', new Date());
 		gtag('config', 'G-PC3CSK7TJN');
 	}
+</script>
+
+<!-- JSON-LD for B&B -->
+<script type="application/ld+json" set:html={jsonLdContent}>
 </script>

@@ -1,19 +1,15 @@
 ---
 import { Carousel, Photo } from 'astro-carousel';
-// import { useEffect, useState } from 'react';
 
-const album = 'bnbbosserheide/202506'; // jouw cloudinary folder
-// const [images, setImages] = useState([]);
+interface Props {
+  folder?: string;
+}
 
-// useEffect(() => {
-// 	fetch(`/api/album?folder=${album}`)
-// 		.then(res => res.json())
-// 		.then(setImages)
-// 		.catch(console.error);
-// }, []);
-const response = await fetch(`http://localhost:4321/api/album.json`);
+const { folder = '202506/final/highlights' } = Astro.props;
+
+// Fetch images from the API with the specified folder
+const response = await fetch(`${Astro.url.origin}/api/album.json?folder=${folder}`);
 const images = await response.json();
-console.log(`Response from API: ${response.status} ${response.statusText}`);
 ---
 
 <Carousel images={images} />

@@ -1,45 +1,85 @@
 ---
+interface Props {
+	source?: string;
+	showTitle?: boolean;
+}
 
-import Container  from '../components/core/Container.astro';
-import {amenitiesLists } from '../config/amenities';
+const { source = 'apartment', showTitle = true } = Astro.props;
+
+import Container from '../components/core/Container.astro';
 import { Icon } from 'astro-icon/components';
+import data from '../data/amenities.json';
+
+// Fetch amenities from API
+const response = await fetch(`${Astro.url.origin}/api/amenities.json?source=${source}`);
+// const amenitiesLists = await response.json();
+const amenitiesLists = data.apartment;
 ---
 
 <Container>
-	<h1>Voorzieningen</h1>
-
-	<button aria-label="review score" class="group flex items-center cursor-default flex-row w-full cursor-pointer"><div class="-icon w-full"><div class="transition w-full bg-tinted text-primary rounded-full rounded-bl-0 hover:bg-tinted-dark"><svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" font-size="42" dy="7" fill="currentColor" dominant-baseline="middle" text-anchor="middle">10</text></svg></div></div></button>
+	{showTitle && <h1>Voorzieningen</h1>}
 
 	<div class="amenities-grid__container">
-	{
-		amenitiesLists.map((list) => (
-			<div>
-				<p>
-					<Icon name={list.icon} width={24} height={24} />
-					<strong>{list.title}</strong>
-				</p>
+		{
+			amenitiesLists.map((list) => (
+				<div class="amenity-category">
+					<p class="amenity-category__title">
+						<Icon name={list.icon} width={24} height={24} />
+						<strong>{list.title}</strong>
+					</p>
 
-				<ul class="footer-link__list">
-					{list.items.map((item) => (
-						<li>
-							<a href={item.slug}>{item.title}</a>
-
-						</li>
-					))}
-				</ul>
-			</div>
-		))
-	}
-
+					<ul class="amenity-list">
+						{list.items.map((item) => (
+							<li class="amenity-item">
+								{item.icon &&
+									<Icon name={item.icon} width={16} height={16} />}
+								<span>{item.title}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
 	</div>
-
-
 </Container>
 
 <style>
     .amenities-grid__container {
-        padding: 10vh 0 1rem 0;
+        padding: 2rem 0;
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .amenity-category {
+        margin-bottom: 1.5rem;
+    }
+
+    .amenity-category__title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .amenity-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .amenity-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+        .amenities-grid__container {
+            grid-template-columns: 1fr;
+        }
     }
 </style>

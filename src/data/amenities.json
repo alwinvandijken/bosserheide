@@ -1,0 +1,117 @@
+{
+  "apartment": [
+    {
+      "title": "Kamer",
+      "icon": "mdi:bed",
+      "sortOrder": 1,
+      "items": [
+        {
+          "title": "70 m²",
+          "icon": "mdi:ruler-square",
+          "sortOrder": 1
+        },
+        {
+          "title": "Privé badkamer",
+          "icon": "mdi:shower",
+          "sortOrder": 2
+        },
+        {
+          "title": "Eigen keuken",
+          "icon": "mdi:silverware-fork-knife",
+          "sortOrder": 3
+        },
+        {
+          "title": "Eigen entree",
+          "icon": "mdi:door",
+          "sortOrder": 4
+        }
+      ]
+    },
+    {
+      "title": "Voorzieningen",
+      "icon": "mdi:home-outline",
+      "sortOrder": 2,
+      "items": [
+        {
+          "title": "Gratis WiFi",
+          "icon": "mdi:wifi",
+          "sortOrder": 1
+        },
+        {
+          "title": "Inclusief ontbijt",
+          "icon": "mdi:food",
+          "sortOrder": 2
+        },
+        {
+          "title": "TV",
+          "icon": "mdi:television",
+          "sortOrder": 3
+        },
+        {
+          "title": "Koelkast",
+          "icon": "mdi:fridge",
+          "sortOrder": 4
+        },
+        {
+          "title": "Koffiezetapparaat",
+          "icon": "mdi:coffee",
+          "sortOrder": 5
+        },
+        {
+          "title": "Waterkoker",
+          "icon": "mdi:kettle",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "title": "Buiten",
+      "icon": "mdi:tree",
+      "sortOrder": 3,
+      "items": [
+        {
+          "title": "Terras",
+          "icon": "mdi:umbrella",
+          "sortOrder": 1
+        },
+        {
+          "title": "Tuin",
+          "icon": "mdi:flower",
+          "sortOrder": 2
+        },
+        {
+          "title": "Gratis parkeren",
+          "icon": "mdi:parking",
+          "sortOrder": 3
+        }
+      ]
+    },
+    {
+      "title": "Omgeving",
+      "icon": "mdi:map-marker",
+      "sortOrder": 4,
+      "items": [
+        {
+          "title": "Natuurgebied",
+          "icon": "mdi:pine-tree",
+          "sortOrder": 1
+        },
+        {
+          "title": "Wandelroutes",
+          "icon": "mdi:hiking",
+          "sortOrder": 2
+        },
+        {
+          "title": "Fietsroutes",
+          "icon": "mdi:bike",
+          "sortOrder": 3
+        },
+        {
+          "title": "Maasduinen",
+          "icon": "mdi:water",
+          "sortOrder": 4
+        }
+      ]
+    }
+  ]
+}

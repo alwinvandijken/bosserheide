@@ -3,145 +3,146 @@ import { Icon } from 'astro-icon/components';
 import {
 	AnnouncementBar,
 	Button,
-	CustomerQuoteSection,
-	ThreeColumnTextSection,
-	YouTubeEmbedSection,
-	StickyTextImageSection,
-	CtaCardSection,
+	Container,
+	CustomerQuoteSection
 } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
 import Amenities from '../components/Amenities.astro';
-import Reviews from '../components/reviews.astro';
+
+import CloudinaryCarousel from '../components/image-carousels/DynamicCloudinaryCarousel.astro';
 
 const seo = {
-	title: 'Landing Page #1 | Astro Odyssey Theme',
-	description: 'Landing Page #1 | Astro Odyssey Theme',
+	title: 'Appartement | B&B Bosserheide',
+	description: 'Ontdek ons ruime en comfortabele appartement in B&B Bosserheide, gelegen in het prachtige Well (Limburg).'
 };
 ---
 
-<AnnouncementBar
-	text="Read Our Latest Blog Post"
-	href="/blog/posts/remote-work-mental-health/"
-	slot="announcement-bar"
-/>
 <Layout {seo}>
-	<Reviews></Reviews>
-	<TextAndImageHero reversed>
+	<TextAndImageHero>
 		<div slot="text-container">
-			<h1>Don't Reinvent the Wheel</h1>
-			<p>Use Odyssey Theme to jumpstart your company's marketing website.</p>
+			<h1>Ons Appartement</h1>
+			<p>
+				Welkom in ons ruime en comfortabele appartement van 70m² met eigen entree,
+				badkamer en keuken. Geniet van een heerlijk ontbijt en de prachtige omgeving
+				van de Maasduinen.
+			</p>
 		</div>
 		<div slot="btns-container">
-			<Button href="/theme/get-started" customIcon
-			>Get Started <Fragment slot="icon">
-				<Icon name="ic:baseline-chevron-right" />
-			</Fragment></Button
-			>
+			<Button href="/reserveren" customIcon>
+				Reserveer nu
+				<Fragment slot="icon">
+					<Icon name="ic:baseline-chevron-right" />
+				</Fragment>
+			</Button>
 		</div>
 		<picture slot="image-container">
 			<img
-				src="/assets/images/landing-1/landing-hero-1.jpg"
-				alt="Astro Odyssee"
-				id="home-hero-image"
+				src="https://res.cloudinary.com/dg4rnkej8/image/upload/w_1350,f_auto,q_auto/v1/202506/final/highlights/bnb-bosserheide-well-limburg-kamer-1_rvnvxl.jpg"
+				alt="B&B Bosserheide appartement"
+				id="apartment-hero-image"
 			/>
 		</picture>
 	</TextAndImageHero>
 
-	<Amenities>
+	<Container>
+		<div class="apartment-intro">
+			<h2>Een comfortabel verblijf in de natuur</h2>
+			<p>
+				Ons appartement biedt alle comfort die u nodig heeft voor een ontspannen verblijf.
+				Met een ruime woonkamer, een volledig uitgeruste keuken, een comfortabele slaapkamer
+				en een moderne badkamer voelt u zich direct thuis.
+			</p>
+			<p>
+				Het appartement heeft een eigen entree, zodat u in alle privacy kunt komen en gaan wanneer u wilt.
+				Elke ochtend serveren wij een heerlijk ontbijt met verse, lokale producten.
+			</p>
+		</div>
+	</Container>
 
-	</Amenities>
+	<div class="carousel-section">
+		<h2>Foto's van het appartement</h2>
+		<CloudinaryCarousel folder="202506/final/apartment" />
+	</div>
 
+	<Container>
+		<h2>Voorzieningen</h2>
+		<p class="amenities-intro">
+			Ons appartement is voorzien van alle gemakken om uw verblijf zo aangenaam mogelijk te maken.
+			Hieronder vindt u een overzicht van alle voorzieningen die tot uw beschikking staan.
+		</p>
+	</Container>
 
+	<Amenities source="apartment" showTitle={false} />
 
 	<CustomerQuoteSection
-		quoteText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, vero nobis? Voluptas assumenda, voluptatibus commodi qui ducimus delectus praesentium maiores, impedit iure labore ratione, ea facilis numquam doloremque aperiam aspernatur."
-		customerName="Happy Customer"
+		quoteText="Wat een prachtige plek! Het appartement is ruim, schoon en van alle gemakken voorzien. Het ontbijt was heerlijk en de gastheer en gastvrouw zijn zeer vriendelijk en behulpzaam. Een absolute aanrader!"
+		customerName="Tevreden gast"
 	/>
 
-	<ThreeColumnTextSection>
-		<div slot="column-1-body">
-			<h2>Why?</h2>
+	<Container>
+		<div class="apartment-location">
+			<h2>Omgeving</h2>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
+				B&B Bosserheide is gelegen in het prachtige Well (Limburg), aan de rand van Nationaal Park De
+				Maasduinen.
+				De omgeving is perfect voor wandel- en fietstochten door de natuur. Het historische stadje Arcen met
+				zijn
+				thermale baden en kasteeltuinen ligt op slechts 10 minuten rijden.
 			</p>
+			<p>
+				In de directe omgeving vindt u ook:
+			</p>
+			<ul>
+				<li>Natuurgebied De Maasduinen</li>
+				<li>Recreatieplas 't Leukermeer</li>
+				<li>Historisch stadje Arcen</li>
+				<li>Kasteeltuinen Arcen</li>
+				<li>Thermalbad Arcen</li>
+				<li>Diverse wandel- en fietsroutes</li>
+			</ul>
 		</div>
-		<Button slot="column-1-cta">Learn More</Button>
-		<div slot="column-2-body">
-			<h2>How?</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-		</div>
-		<Button slot="column-2-cta" outlined>Learn More</Button>
-		<div slot="column-3-body">
-			<h2>What?</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-		</div>
-		<Button slot="column-3-cta">Learn More</Button>
-	</ThreeColumnTextSection>
-
-	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded
-	/>
-
-	<StickyTextImageSection>
-		<div slot="text-container">
-			<h2>Features</h2>
-			<h3>SEO</h3>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-			<h3>Responsive</h3>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-			<h3>Themeable</h3>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-		</div>
-		<picture slot="image-container">
-			<img
-				src="/assets/images/landing-1/landing-sticky.jpg"
-				alt="Astro Odyssey"
-				loading="lazy"
-			/>
-		</picture>
-	</StickyTextImageSection>
-
-	<CtaCardSection
-		background="var(--theme-surface-2)"
-		color="var(--theme-on-surface-2)"
-	>
-		<h2>Start Your Website Today</h2>
-		<p>
-			It only takes a couple clicks to have a new, modern website for your
-			business or startup.
-		</p>
-		<Button href="/theme/get-started" customIcon
-		>Get Started <Fragment slot="icon">
-			<Icon name="ic:baseline-chevron-right" />
-		</Fragment></Button
-		>
-	</CtaCardSection>
+	</Container>
 </Layout>
+
+<style>
+    .apartment-intro, .apartment-location {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+
+    .carousel-section {
+        padding: 4rem 0;
+        background-color: var(--theme-surface-1);
+    }
+
+    .carousel-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .amenities-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+
+    ul {
+        margin-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+</style>
