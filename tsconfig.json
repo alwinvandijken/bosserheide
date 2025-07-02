@@ -1,20 +1,50 @@
 {
-	"compilerOptions": {
-		"experimentalDecorators": true,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "es2020",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "types": [
+      "astro/client"
+    ],
     "useDefineForClassFields": false,
     "baseUrl": "src",
-		// Add type definitions for our Vite runtime.
-	  "types": ["astro/client"],
+    // Add type definitions for our Vite runtime.
+    "types": [
+      "astro/client"
+    ],
     "paths": {
-      "@config": ["config/*"],
-      "@icons": ["icons/*"],
-      "@lib/*": ["lib/*"],
-      "@utils/*": ["utils/*"],
-      "@components/*": ["components/*"],
-      "@layouts/*": ["layouts/*"],
-      "@assets/*": ["assets/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"]
+      "@config": [
+        "config/*"
+      ],
+      "@icons": [
+        "icons/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
     }
-	}
+  }
 }

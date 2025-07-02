@@ -1,0 +1,68 @@
+---
+import { Carousel, Photo } from 'astro-carousel';
+// import { useEffect, useState } from 'react';
+
+const album = 'bnbbosserheide/202506'; // jouw cloudinary folder
+// const [images, setImages] = useState([]);
+
+// useEffect(() => {
+// 	fetch(`/api/album?folder=${album}`)
+// 		.then(res => res.json())
+// 		.then(setImages)
+// 		.catch(console.error);
+// }, []);
+const response = await fetch(`http://localhost:4321/api/album.json`);
+const images = await response.json();
+console.log(`Response from API: ${response.status} ${response.statusText}`);
+---
+
+<Carousel images={images} />
+
+<ul class="entry__entries" id="carouselTargetList">
+	{
+		images.map((img, i) => (
+			<li class="entry__elem">
+				<a
+					title={img.title}
+					href={`./?image=${i}`}
+					data-carousel-index={i}
+					class="entry__link"
+				>
+					<Photo {...img} />
+				</a>
+			</li>
+		))
+	}
+</ul>
+
+<style lang="scss">
+  .entry {
+    &__entries {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__elem {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__img {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    &__link {
+      display: block;
+    }
+  }
+</style>
